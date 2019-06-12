@@ -1,0 +1,119 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+div, h3, h5, h6 {
+	display: block;
+}
+
+body{
+	background-image: url("https://static.vecteezy.com/system/resources/previews/000/116/047/original/vector-blue-chemical-formula-background.jpg");
+	/* background-position: center; */
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 100vw;
+	height: 100%;
+	/* display: inline-flex; */
+}
+
+.main{
+	margin: 0 auto;
+}
+
+caption{
+	margin: -42px;
+	font-size: 1.7vmax;
+	text-decoration: underline;
+	font-weight: 600;
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+	color: #ffffffd1;
+}
+
+table{
+	width: 98%;
+	margin: 10px auto;
+}
+
+td{
+	padding: 3px;
+	width: 2.6vw;
+	height: 7.8vh;
+	padding: 0px 5px 0px 5px;
+}
+
+h3{
+	font-weight: bold;
+	text-align: center;
+	font-size: 1.0vmax;
+}
+
+.profile{
+	margin-bottom: 60px;
+}
+
+.profile-image{
+	height: 10.2vw;
+	width: 9vw;
+	margin: 10px auto;
+	display: block;
+	border-radius: 50%;
+}
+
+.small-cell {
+	height: 15px;
+}
+
+h5{
+	font-size: 0.5vw;
+	font-weight: 300;
+	text-align: right;
+}
+
+h6{
+	font-size: 0.5vw;
+	font-weight: 300;
+	text-align: left;
+}
+/********** color ******************/
+.nometal{
+	background-color: rgba(28, 132, 250, 0.787);
+}
+
+.alk-metal{
+	background-color:  rgba(150, 91, 173, 0.705);
+}
+
+.alk-earth{
+	background-color: rgba(178, 62, 224, 0.705);
+}
+
+.trans-metal{
+	background-color:  rgba(96, 165, 245, 0.876);
+}
+
+.basic-metal{
+	background-color:  rgb(248, 192, 142)
+}
+
+.halogen{
+	background-color: #dfd25e;
+}
+
+.noble-gas{
+	background-color: rgb(241, 139, 14);
+}
+
+.semi-metal{
+	background-color: rgba(123, 204, 2, 0.863);
+}
+
+.lanthanide{
+	background-color: greenyellow;
+}
+
+.actinide{
+	background-color: rgb(250, 53, 53);
+}

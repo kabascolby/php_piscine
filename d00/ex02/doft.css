@@ -1,0 +1,223 @@
+#main {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+
+
+.gray-block {
+  background-color: rgb(144, 144, 144);
+  box-shadow: 8px 8px 5px black;
+  border-radius: 10px;
+}
+
+/* midle content page */
+.content {
+  display: inline-block;
+  width: 70%;
+  height: 50%;
+  margin-left: 15%;;
+  margin-top: 2%;
+}
+
+#arrow {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+
+#tools {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+
+#day42 {
+  display: inline-block;
+  width: 35%;
+}
+
+#loupe {
+  width: 22%;
+  z-index: 2;
+  margin-left: 39%;
+  position: absolute;
+}
+
+#reload {
+  width: 60%;
+  display: block;
+  margin-left: 35%;
+}
+
+#close {
+  width: 60%;
+  display: block;
+  margin-top: 210%;
+  margin-left: 35%;
+}
+
+#eye {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+#chat-icon {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+
+#towel {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+
+#book {
+	display:block;
+  	width:60%;
+  	margin:auto;
+  	margin-top:10%;
+}
+
+.top-block {
+  width: 74%;
+  height: auto;
+  margin: auto;
+  margin-top: 1%;
+  padding: 1%;
+  position: relative;
+  z-index: 1;
+}
+
+
+.mid-block {
+  width: 72%;
+  height: auto;
+  padding: 1%;
+  float: left;
+  margin-left: 3%;
+  z-index: 1;
+}
+
+#cluster {
+  width: 100%;
+  display: block;
+  margin: auto;
+  z-index: 2;
+  height: 100%;
+}
+
+#ikea {
+	width: 4vw;
+    height: 18vh;
+    float: right;
+    margin-top: -23%;
+    margin-right: 60%;
+    position: relative;
+}
+
+#apple {
+  	width:20%;
+  	height: 9vh;
+	float: right;
+    margin-top: -22%;
+    margin-right: 2%;
+  	position: relative;
+}
+
+#ordinateur{
+	text-shadow: 2px 4px 5px red;
+}
+
+#italic {
+	font-style: italic;
+	padding-bottom: 2px;
+	margin: 0;
+	font-family: arial;
+}
+
+.right-block {
+  width: 8%;
+  height: auto;
+  padding: 1%;
+  float: right;
+  margin-left: 1%;
+  padding-bottom: 13%;
+}
+
+.green {
+  display: inline-block;
+  background-color: #98FB98;
+  width: 36%;
+  height: auto;
+  z-index: 4;
+  margin-top: -6%;
+  margin-left: -6%;
+  box-shadow: 8px 8px 5px black;
+  border-radius: 10px;
+  padding: 1%;
+  padding-bottom: 4%;
+}
+
+.text-green {
+    padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+#top-right {
+  width: 100%;
+  height: auto;
+  width: 3%;
+  float: right;
+  margin-right: -1%;
+}
+
+.left-block{
+  width: 8%;
+  height: auto;
+  padding: 1%;
+  float: left;
+  padding-bottom: 2%;
+}
+#eye {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+#big_word {
+  font-size: 2vw;
+  font-family: Georgia;
+}
+
+.wall {
+  display: block;
+  width: 30%;
+  visibility: hidden;
+}
+
+#walls {
+display: block;
+background : url("resources/brick.jpg");
+background-repeat: repeat;
+background-size: 27%;
+}
+
+#formulaire{
+	width: 19vw;
+	margin: 0px 2px;
+	padding: 3px;
+}
+
+#repondre {
+	font-size: 0.62vw;
+    border-radius: 3px;
+}
