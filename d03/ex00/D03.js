@@ -83,6 +83,7 @@ var error404 = `<!DOCTYPE html>
 <main class="bsod container">
 <h1 class="neg title"><span class="bg">Error - 404</span></h1>
 <p>An error has occured, to continue:</p>
+<p>* Create or Put your index.html page in ~/http/MyWebSite/d03</p>
 <p>* Return to our homepage.<br />
 * Send us an e-mail about this error and try later.</p>
 <nav class="nav">
@@ -94,18 +95,19 @@ var error404 = `<!DOCTYPE html>
 </html>`
 
 /*
-	ressources 
+  ressources
+  https://stackoverflow.com/questions/31645738/how-to-create-full-path-with-nodes-fs-mkdirsync
  	https://medium.freecodecamp.org/microservice-8edfdb9be811
 */
 
 
 let dir = process.env.HOME + "/http/MyWebSite/d03"
-if (!fs.existsSync(dir)) {
-	fs.mkdirSync(dir);
-}
 
+if (!fs.existsSync(dir)) {
+  fs.mkdirSync(dir, { recursive: true });
+}
 const requestHandler = (req, res) => {
-	if (req.url === "/") {
+  if (req.url === "/") {
 		fs.readFile(dir + "/index.html" , "utf8", (err, html) => {
 			if (err){
 				res.writeHead(404, { "Content-Type": "text/html" });
