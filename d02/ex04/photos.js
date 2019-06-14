@@ -1,28 +1,40 @@
 #!/usr/bin/env node
 'use strict';
 const https = require('https');
-var fs = require('fs');
+const fs = require('fs');
 
-var myRegexp = /<(?:img[^"]+")([^"]+)(?:[^>]+)>/g;
-if(process.argv[2]){
+const myRegexp = /<(?:img[^"]+")([^"]+)(?:[^>]+)>/g;
+const myRegexp2 = /[^\/]*(?:\.png|gif|jpg|svg|raw|TIFF|BMP)/gi;
+if (process.argv[2]) {
 	const link = process.argv[2];
 	var dir = process.argv[2].split('https://')[1];
 	dir = dir.split('/')[0];
-	https.get(link, (response) => {
+
+	var get = https.get(link, (response) => {
 		response.on('data', (buffer) => {
 			buffer = buffer.toString();
 			buffer = buffer.replace(myRegexp, (match, sub) => { // i'm using replace to get the match which is the full substring and sub is the captured group
 				sub = sub.indexOf(link) === -1 && sub.indexOf('https://') === -1 ? link + sub : sub; //with searc i'm checking if the substing containg the link if not i'm appendding to it;
-				if (/(?=\w+\.\w{3,4}$).+/.test(sub)) {
-					let photoName = /(?=\w+\.\w{3,4}$).+/.exec(sub)[0];
+				if (myRegexp2.test(sub)) {
+					console.log("-->",sub);
+					let photoName = sub.match(myRegexp2)[0];
 					if (!fs.existsSync(dir)) {
 						fs.mkdirSync(dir);
 					}
-					var file = fs.createWriteStream(dir + '/' + photoName) // I'm creation a file name by using exec to capture only the file name;
-					https.get(sub, function (imagResponse) {
-						imagResponse.pipe(file);
-					}).on('error', (e) => {
-						throw Error('download failed' + e);
+					var stream = fs.createWriteStream(dir + '/' + photoName);
+					https.get(sub, (res) => {
+						res.once("data", (chunk) => {
+							console.log(`starting download ${photoName}`);
+						});
+
+						res.on('data', (chunk) => {
+							console.log(chunk.toString().length);
+							stream.write(chunk);
+						});
+
+						res.on('end', () => {
+							console.log(`finishing downloading ${photoName}\n\n`);
+						})
 					});
 				}
 			});
@@ -31,6 +43,8 @@ if(process.argv[2]){
 		});
 	});
 }
+
+get.end();
 
 /* 
 	https://stackoverflow.com/questions/1789945/how-to-check-whether-a-string-contains-a-substring-in-javascript

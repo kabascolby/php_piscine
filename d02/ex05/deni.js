@@ -7,7 +7,7 @@ var fs = require('fs');
 var readline = require('readline');
 var av = process.argv;
 
-if (av.length === 4 || (av[2].indexOf("data.csv") !== -1)) {//checking if the array containt a string "data.csv" same fn as "indexOf"
+if (av.length === 4 && (av[2].indexOf("data.csv") !== -1)) {//checking if the array containt a string "data.csv" same fn as "indexOf"
 	var buffer = fs.readFileSync(av[2], 'UTF8').trim().split('\n')
 		.map(line => line.split(';'))
 	var headers = buffer.shift();
