@@ -11,7 +11,7 @@ function parseCookies(request) {
 	return list;
 }
 
-http.createServer(function (request, response) {
+const server = http.createServer(function (request, response) {
 	var query = url.parse(request.url, true).query || {};
 	switch (true) {
 		case (query.action === 'set'):
@@ -20,6 +20,7 @@ http.createServer(function (request, response) {
 			break;
 		case (query.action === 'get'):
 			var cookies = parseCookies(request);
+			console.log(cookies);
 			cookies[query.name].length > 0 ? response.write(cookies[query.name] + "\n") : null; //check the coockies length before printing
 			break;
 		case (query.action === 'del'):
@@ -31,9 +32,11 @@ http.createServer(function (request, response) {
 			break;
 	}
 	response.end();
-}).listen(8000);
-
-console.log('Server running at http://localhost:8000/');
+}).listen(8000, err => {
+	if (err) throw err;
+  console.log(`Server running at http://localhost:${server.address().port}`);
+  });
+// console.log('Server running at http://localhost:8000/');
 
 // curl -c cook.txt 'http://localhost:8000/nfs/2017/l/lkaba/Desktop/kaba/piscine/42/php_piscine/d03/ex03/cookie_crisp.js?action=set&name=plat&value=choucroute'
 // curl -b cook.txt 'http://localhost:8000/nfs/2017/l/lkaba/Desktop/kaba/piscine/42/php_piscine/d03/ex03/cookie_crisp.js?action=get&name=plat'

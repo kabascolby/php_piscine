@@ -29,4 +29,7 @@ http.createServer((request, response) => {
 
     // END OF NEW STUFF
   });
-}).listen(8080);
+}).listen(8100, err => {
+  if (err) throw err;
+console.log(`Server running on PORT ${server.address().port}`);
+});
