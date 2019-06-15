@@ -20,7 +20,7 @@ const server = http.createServer(function (request, response) {
 			break;
 		case (query.action === 'get'):
 			var cookies = parseCookies(request);
-			console.log(cookies);
+			// console.log(cookies);
 			cookies[query.name].length > 0 ? response.write(cookies[query.name] + "\n") : null; //check the coockies length before printing
 			break;
 		case (query.action === 'del'):

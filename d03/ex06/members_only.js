@@ -1,6 +1,56 @@
 const http = require('http');
+const fs = require('fs');
+var qs = require('querystring');
 
-http.createServer((request, response) => {
+function parseCookies(request) {
+	var list = {},
+		rc = request.headers.cookie;
+	rc && rc.split(';').forEach(function (cookie) {
+		var parts = cookie.split('=');
+		list[parts.shift().trim()] = decodeURI(parts.join('='));
+	});
+	return list;
+}
+
+var server = http.createServer(function (req, res) {
+
+
+  if (req.method == 'GET') {
+    console.log('-------------------------here-------------')
+          var body = '';
+
+          req.on('data', function (data) {
+              body += data;
+
+              // Too much POST data, kill the connection!
+              // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+              if (body.length > 1e6)
+                  request.connection.destroy();
+          });
+
+          req.on('end', function () {
+              var post = qs.parse(body);
+              console.log(post);
+              // use post['blah'], etc.
+          });
+      }
+	if (req.method === "GET") {
+    var cookies = parseCookies(req);;
+		console.log(cookies);
+    let img;
+		res.writeHead(200, { 'Content-Type': 'image/png' });
+		img = fs.readFileSync("../img/42.png");
+		res.end(img, 'binary');
+  }
+  else
+    res.end();
+}).listen(8100, err => {
+  if (err) throw err;
+console.log(`Server running on PORT ${server.address().port}`);
+});
+
+
+/* http.createServer((request, response) => {
   const { headers, method, url } = request;
   let body = [];
   request.on('error', (err) => {
@@ -29,7 +79,4 @@ http.createServer((request, response) => {
 
     // END OF NEW STUFF
   });
-}).listen(8100, err => {
-  if (err) throw err;
-console.log(`Server running on PORT ${server.address().port}`);
-});
+}) */
