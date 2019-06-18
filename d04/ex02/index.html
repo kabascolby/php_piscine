@@ -1,8 +1,11 @@
 <html><body>
-	<form id="userform">
-	Username: <input type="text" name="login" value="">
-	<br />
-	Password: <input type="text" name ="passwd" value="">
-	<input type="submit" value="OK"/>
+	<form action="http://localhost:8100/j04/ex02/modif.js" method="POST" id="userform">
+		username:&emsp;&emsp; <input type="text" name="login" value="" required>
+		<br>
+		old password: &ensp;<input id="password" type="password" name ="oldpw" value="" required>
+		<br>
+		new password: <input id="new_password" type="password" name="newpw" required>
+		<input type="submit" name="submit" value="OK" required>
 	</form>
+</div>
 </body></html>

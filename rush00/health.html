@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>7-11 minihshop</title>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="sidenav.css">
+</head>
+
+<body>
+	<header>
+		<h1>7-11</h1>
+		<input type="checkbox" id="nav-toggle" class="nav-toggle">
+		<nav>
+			<ul class="menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="basket.html">Basket</a></li>
+				<li><a href="admin.html">Admin</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</nav>
+		<label for="nav-toggle" class="nav-toggle-label">
+			<span></span>
+		</label>
+	</header>
+	<div class="content">
+        <div id="sidenav" class="sidenav">
+            <a href="index.html">Drink</a>
+            <a href="snack.html">Snack</a>
+            <a href="health.html">health</a>
+        </div>
+        <div class="itemlist">
+            <div class="items">
+                <img src="img/foss_picks.jpg">
+                <p>Price: $1</p>
+                <input type="number">
+                <button>add to chart</button>
+            </div>
+            <div class="items">
+                <img src="img/tissue.jpg">
+                <p>Price: $3</p>
+                <input type="number">
+                <button>add to chart</button>
+            </div>
+            <div class="items">
+                <img src="img/cough_drops.jpg">
+                <p>Price: $43</p>
+                <input type="number">
+                <button>add to chart</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

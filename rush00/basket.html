@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>7-11 minihshop</title>
+	<link rel="stylesheet" href="menu.css">
+	<style>
+		.body{
+			font-family: 'Work Sans', sans-serif;
+		}
+		.itemslist{
+			margin-top:79px;
+		}
+		.items img{
+			width:10%;
+			padding: 10px;
+		}
+		.button{
+			padding: 15px 32px;
+			border: 2px solid rgba(85, 214, 170, .70);
+			font-size: 15px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>7-11</h1>
+		<input type="checkbox" id="nav-toggle" class="nav-toggle">
+		<nav>
+			<ul class="menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="basket.html">Basket</a></li>
+				<li><a href="admin.html">Admin</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</nav>
+		<label for="nav-toggle" class="nav-toggle-label">
+			<span></span>
+		</label>
+	</header>
+	<div class="content">
+		<div class="itemslist">
+			<div class="items"><img src="img/purewater.jpg"><span class="price">Price: $10</span>  <span class="qual">Qaulity: <input type="number" value="1"></div>
+			<div class="items"><img src="img/purewater.jpg"><span class="price">Price: $10</span>  <span class="qual">Qaulity: <input type="number" value="1"></div>
+			<div class="items"><img src="img/purewater.jpg"><span class="price">Price: $10</span>  <span class="qual">Qaulity: <input type="number" value="1"></div>
+			<br />
+			<button class="button">checkout</button>
+		</div>
+	</div>
+</body>
+
+</html>

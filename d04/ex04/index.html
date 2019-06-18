@@ -1,0 +1,71 @@
+<html>
+	<head>
+		<title>Login Tchat</title>
+		<style>
+			input[type=text], input[type=password] {
+				width: 12vw;
+				padding: 8px;
+				margin: 5px 0 22px 0;
+				display: inline-block;
+				border: none;
+				background: #f1f1f1;
+			}
+			html, body {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+				
+			body{
+				background-image: url('https://lh3.googleusercontent.com/-Uwd8Cr-7C5g/WdIaWHqBnWI/AAAAAAAANmc/Mdv_tZIIRnIOR_zvAJJ0VuztB1Q9k50bwCHMYCw/s1600/whatsapp.jpg');
+				background-blend-mode: multiply;
+				background-size: cover;
+				width: 100vw;
+				height: 100vh;
+			}
+			.container {
+				position: absolute;
+				width: 18vw;
+				height: 15vh;
+				font-size: 0.7vw;
+				top:0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				background-color: #28665663;
+				font-weight: 600;
+				font-family: Arial, Helvetica, sans-serif;
+				color: #f1f1f1;
+				margin: auto;
+				padding: 10px;
+				border-radius: 5px;
+			}
+			.signin {
+				/* text-align: center; */
+				padding: 8px 23px;
+				font-size: 0.8vw;
+			}
+		footer {
+			color: white;
+			position:fixed;
+ 			bottom:2px;
+ 			left:5px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h3 align="center">CONNECT TO CHAT</h4>
+			<form action="/index.html" method="POST" id="userform">
+			Username: <input type="text" name="login" value="">
+			<br />
+			Password: <input type="password" name ="passwd" value="">
+			<input type="submit" name ="submit" value="OK"/>
+			</form>
+			<a href="create.html" class="content signin">Create account</a>
+			<a href="modif.html" class="content signin">Modify Password</a>
+		</div>
+		<footer>
+			&copy; lkaba 2019 
+		</footer>
+</body></html>

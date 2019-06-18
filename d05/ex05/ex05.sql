@@ -1,0 +1,1 @@
+DELETE FROM ft_table WHERE login IN ('loki', 'scadoux', 'chap', 'bambou', 'fantomet');

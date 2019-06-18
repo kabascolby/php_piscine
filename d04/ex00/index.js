@@ -16,14 +16,16 @@ function parseCookies(req) {
 
 function printTemplate(login, passwd){
 	return `<html><body>
-	<form id='userform'>
+	<form method="GET" id='userSession'>
 	Username: <input type='text' name='login' value="${login}">
-<br />Password: <input type='text' name ='passwd' value="${passwd}">
+<br/>
+Password: <input type='text' name ='passwd' value="${passwd}">
 <input type='submit' value='OK'/></form>
 </body></html>`;
 }
 
-http.createServer(function (req, res) {
+const server = http.createServer(function (req, res) {
+	console.log(req.method);
 	var query = url.parse(req.url, true).query || {};
 	if(Object.keys(query).length === 0){
 		if(!req.headers.cookie){
@@ -41,12 +43,14 @@ http.createServer(function (req, res) {
 		res.write(printTemplate(userInfo.login, userInfo.passwd));
     }
 	res.end();
-}).listen(8100);
-
+}).listen(8100, err => {
+	if (err) throw err;
+  console.log(`Server running at http://localhost:${server.address().port}`);
+  });
 /* 
 	https://stackoverflow.com/questions/5878682/node-js-hash-string
-	curl -v -c cook.txt 'http://e1z3r4p20.42.us.org:8100/ex00/index.js'
-	curl -v -b cook.txt 'http://e1z3r4p20.42.us.org:8100/ex00/index.js?login=sb&passwd=beeone&submit=OK'
-	curl -v -b cook.txt 'http://e1z3r4p20.42.us.org:8100/ex00/index.js'
-	curl -v 'http://e1z3r4p20.42.us.org:8100/ex00/index.js'
+	curl -v -c cook.txt 'http://e1z3r3p12.42.us.org:8100/ex00/index.js'
+	curl -v -b cook.txt 'http://e1z3r3p12.42.us.org:8100/ex00/index.js?login=sb&passwd=beeone&submit=OK'
+	curl -v -b cook.txt 'http://e1z3r3p12.42.us.org:8100/ex00/index.js'
+	curl -v 'http://e1z3r3p12.42.us.org:8100/ex00/index.js'
  */

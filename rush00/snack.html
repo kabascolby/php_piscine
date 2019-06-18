@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+    <title>7-11 minihshop</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="sidenav.css">
+</head>
+
+<body>
+	<header>
+		<h1>7-11</h1>
+		<input type="checkbox" id="nav-toggle" class="nav-toggle">
+		<nav>
+			<ul class="menu">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="basket.html">Basket</a></li>
+				<li><a href="admin.html">Admin</a></li>
+				<li><a href="login.html">Login</a></li>
+			</ul>
+		</nav>
+		<label for="nav-toggle" class="nav-toggle-label">
+			<span></span>
+		</label>
+	</header>
+	<div class="content">
+        <div id="sidenav" class="sidenav">
+            <a href="index.html">Drink</a>
+            <a href="snack.html">Snack</a>
+            <a href="health.html">health</a>
+        </div>
+        <div class="itemlist">
+            <div class="row" id="product-list">
+                <div class="col-4 card mx-2 p-2">
+                    <img src="img/nuts.jpg">
+                    <b>Price: $12</b
+                    <input type="number">
+                    <button class="btn btn-primary">add to chart</button>
+                </div>
+                <div class="col-4 card mx-2 p-2">
+                    <img src="img/jelly_bean.jpg">
+                    <b>Price: $3</b>
+                    <input type="number">
+                    <button class="btn btn-primary">add to chart</button>
+                </div>
+                <div class="col-4 card mx-2 p-2">
+                    <img src="img/sour_worms.jpg">
+                    <b>Price: $33</b>
+                    <input type="number">
+                    <button class="btn btn-primary">add to chart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

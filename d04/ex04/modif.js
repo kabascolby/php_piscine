@@ -24,7 +24,7 @@ function getRequest(req, callback){
 		body += chunk.toString();
 	});
 	req.on('end', () =>{
-		// console.log("getting user request");
+		console.log("getting user request");
 		callback(body);
 	});
 };
@@ -60,7 +60,7 @@ module.exports = (req, res) => {
 				} else {
 					console.log("error file path");
 				}
-				// res.writeHead(303, {Location: '/index.html', "Content-Type" : "text/html"});
+				res.writeHead(303, {Location: '/index.html', "Content-Type" : "text/html"});
 				res.end("OK\n", () => console.log("user"));
 			} else console.log("Invalide keys or blank field(s)");
 			sendError(res);
@@ -69,7 +69,3 @@ module.exports = (req, res) => {
 };
 
 // https://ciphertrick.com/2016/01/18/salt-hash-passwords-using-nodejs-crypto/
-// curl -d login=x -d passwd=21 -d submit=OK 'http://e1z3r3p12.42.us.org:8100/j04/ex01/create.js'
-// curl -d login=x -d oldpw=21 -d newpw=42 -d submit=OK 'http://e1z3r3p12.42.us.org:8100/j04/ex02/modif.js'
-// curl -d login=x -d oldpw=21 -d newpw=42 -d submit=OK 'http://e1z3r3p12.42.us.org:8100/j04/ex02/modif.js'
-// curl -d login=x -d oldpw=42 -d newpw= -d submit=OK 'http://e1z3r3p12.42.us.org:8100/j04/ex02/modif.js'

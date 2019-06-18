@@ -1,0 +1,79 @@
+<html>
+<head>
+	<style>
+		input[type=text], input[type=password] {
+			width: 12vw;
+			padding: 8px;
+			margin: 5px 0 22px 0;
+			display: inline-block;
+			border: none;
+			background: #f1f1f1;
+		}
+		html, body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			}
+		body{
+			background: #1d976c; /* fallback for old browsers */
+				background: -webkit-linear-gradient(to right, #1d976c, #93f9b9); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to right, #1d976c, #93f9b9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			width: 100vw;
+			height: 100vh;
+			}
+		.container {
+			position: absolute;
+			width: 22vw;
+			height: 15vh;
+			font-size: 0.8vw;
+			top:0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: #28665605;
+			font-weight: 500;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #f1f1f1;
+			margin: auto;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		footer {
+			color: white;
+			position:fixed;
+ 			bottom:2px;
+ 			left:5px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<form action="/modif.html" method="POST" id="userform">
+			username:&emsp;&emsp; <input type="text" name="login" value="" required>
+			<br>
+			old password: &ensp;<input id="password" type="password" name ="oldpw" value="" required>
+			<br>
+			new password: <input id="new_password" type="password" name="newpw" required>
+			<input type="submit" name="submit" value="OK" required>
+		</form>
+	</div>
+	<footer>
+		&copy; lkaba 2019 
+	</footer>
+	<script>
+		var password = document.getElementById("password")
+		, new_password = document.getElementById("new_password");
+
+		function validatePassword(){
+			if(password.value == new_password.value) {
+				new_password.setCustomValidity("Passwords Have to Be Differrent");
+			} else {
+				new_password.setCustomValidity('');
+			}
+		}
+
+	password.onchange = validatePassword;
+	new_password.onkeyup = validatePassword;
+</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<html>
+	<head>
+		<title>Login Tchat</title>
+		<style>
+		input[type=text], input[type=password] {
+			width: 57%;
+			height: 3vh;
+			padding: 8px;
+			margin: 5px 0 auto 0;
+			display: inline-block;
+			border: none;
+			background: #f1f1f1;
+		}
+		html, body {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background: #1f4037; /* fallback for old browsers */
+  			background: -webkit-linear-gradient(to right, #1f4037, #99f2c8); /* Chrome 10-25, Safari 5.1-6 */
+  			background: linear-gradient(to right, #1f4037, #99f2c8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+			width: 100vw;
+			height: 100vh;
+		}
+		.container {
+			position: absolute;
+			width: 20vw;
+			height: 18vh;
+			font-size: 0.8vw;
+			top:0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: #28665663;
+			font-weight: 500;
+			font-family: Arial, Helvetica, sans-serif;
+			color: #f1f1f1;
+			margin: auto;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		.signin {
+	  	/* text-align: center; */
+			padding: 8px 23px;
+			font-size: 0.8vw;
+		}
+		footer {
+			color: white;
+			position: fixed;
+ 			bottom: 2px;
+ 			left: 5px;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h3 align="center">CREATE ACCOUNT</h4>
+			<form action="/create.html" method="POST" id="userform">
+			Username: <input type="text" name="login" value="" placeholder="Enter Pseudo" required>
+			<br/>
+			Password: &nbsp;<input id="password" type="password" name ="passwd" placeholder="Enter password" required>
+			<br/>
+			Confirm: &ensp;&ensp;<input id="confirm_password" type="password" name ="bisPasswd" placeholder="Confirm password" required>
+			<input type="submit" name ="submit" value="OK"/>
+			</form>
+		</div>
+		<footer>
+			&copy; lkaba 2019 
+		</footer>
+		<script>
+			var password = document.getElementById("password")
+			, confirm_password = document.getElementById("confirm_password");
+	
+			function validatePassword(){
+				if(password.value != confirm_password.value) {
+					confirm_password.setCustomValidity("Passwords Don't Match");
+				} else {
+					confirm_password.setCustomValidity('');
+				}
+			}
+	
+		password.onchange = validatePassword;
+		confirm_password.onkeyup = validatePassword;
+	</script>
+</body></html>

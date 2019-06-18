@@ -1,0 +1,23 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "le pacte2020",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dianemambe10/lepacte2020.git"
+  },
+  "author": "Lamine Kaba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dianemambe10/lepacte2020/issues"
+  },
+  "homepage": "https://github.com/dianemambe10/lepacte2020#readme",
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
